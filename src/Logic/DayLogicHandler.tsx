@@ -1,5 +1,7 @@
 import DayList from "../dataModel/DayList";
 import ColorPalettes from "../dataModel/ColorPalettes";
+import TableData from "../dataModel/TableData";
+import Day from "../dataModel/Day";
 
 const fetchDay = (dayInNumber: number) => {
     let result = "";
@@ -23,9 +25,26 @@ const colorRandomizer = () => {
     return enumArray[random]
 };
 
+const generateIndexForNewTableData = (toBeGenerated: TableData, day: Day) => {
+    toBeGenerated.index = day.tables[day.tables.length - 1].index
+};
+
+const generateEmptyWeek= () : Day[] => {
+    let newWeek = [];
+    for(let i = 0; i < 7; i++){
+        newWeek.push({
+            index: i,
+            tables: []
+        })
+    }
+    return newWeek;
+};
+
 const DayLogicHandler = {
     fetchDay: fetchDay,
-    colorRandomizer: colorRandomizer
+    colorRandomizer: colorRandomizer,
+    generateIndexForNewTableData: generateIndexForNewTableData,
+    generateEmptyWeek: generateEmptyWeek
 };
 
 export default DayLogicHandler

@@ -40,7 +40,8 @@ const compareTimeRange = (this_TimeRange: TimeRange, that_TimeRange: TimeRange) 
 
 const TimeRangeLogicHandler = {
     isTimeValid: isTimeValid,
-    checkIfTimeExist: checkIfTimeExist
+    checkIfTimeExist: checkIfTimeExist,
+    compareTimeRange: compareTimeRange
 };
 
 export default TimeRangeLogicHandler

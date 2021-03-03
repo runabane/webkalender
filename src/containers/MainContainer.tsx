@@ -1,7 +1,8 @@
 import React from 'react';
 import WeekContainer from "./WeekContainer";
 import ColorPalettes from "../dataModel/ColorPalettes";
-import {Typography, withStyles} from "@material-ui/core";
+import {Button, Tooltip, Fab, Grid, Typography, withStyles} from "@material-ui/core";
+import AddIcon from '@material-ui/icons/Add';
 
 /**
  * Main Container that contains all Component
@@ -9,17 +10,24 @@ import {Typography, withStyles} from "@material-ui/core";
  */
 const MainContainer = (props: any) => {
     return(
-        <div style={MCStyle.containerStyle}>
+        <MCStyle>
             <TitleText variant="h1">
                 Meiner Zeitplan
             </TitleText>
             <WeekContainer/>
-        </div>
+            <ButtonContainer>
+                <Tooltip title={"Add Table"} aria-label={"add-table"}>
+                    <StickyAddButton size="large" color="inherit" aria-label="add">
+                        <AddIcon style={{fontSize: 35}}/>
+                    </StickyAddButton>
+                </Tooltip>
+            </ButtonContainer>
+        </MCStyle>
     )
-}
+};
 
-const MCStyle: any = {
-    containerStyle:{
+const MCStyle: any = withStyles({
+    root:{
         display: "flex",
         flexDirection: "column",
         width: "100%",
@@ -28,7 +36,28 @@ const MCStyle: any = {
         alignSelf: "flex-start",
         justifyContent: "flex-start"
     }
-}
+})(Grid);
+
+const StickyAddButton: any = withStyles({
+    root:{
+        width: 75,
+        height: 75,
+        margin: 55,
+        background: `linear-gradient(135deg, ${ColorPalettes.BackgroundColorPalettes.darkerMetallicBlack} 30%, ${ColorPalettes.BackgroundColorPalettes.moreDarkerBlack} 60%)`,
+        color: 'white',
+        boxShadow: `2px 3px 3px 1px ${ColorPalettes.BackgroundColorPalettes.vampireBlack};`
+    }
+})(Fab);
+
+const ButtonContainer: any = withStyles({
+    root: {
+        display: "flex",
+        position: "fixed",
+        bottom: 0,
+        right: 0,
+        justifyContent: "flex-end",
+    }
+})(Grid);
 
 const TitleText = withStyles({
     root:{

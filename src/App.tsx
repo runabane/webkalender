@@ -14,7 +14,6 @@ function App() {
 
 const divStyle: any = {
     divStyle: {
-        backgroundColor: ColorPalettes.BackgroundColorPalettes.metallicBlack,
         fontFamily: "roboto"
     }
 }

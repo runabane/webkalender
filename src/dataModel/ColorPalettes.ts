@@ -2,6 +2,7 @@ enum ColorPalettes {
     metallicBlack = "#323334",
     darkerMetallicBlack = "#28292a",
     moreDarkerBlack = "#202122",
+    vampireBlack= "#080808",
 };
 
 enum ComponentColorPalettes {

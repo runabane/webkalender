@@ -1,27 +1,44 @@
 import CalenderData from "../dataModel/CalenderData";
 import TableData from "../dataModel/TableData";
 import TimeRangeLogicHandler from "../Logic/TimeRangeLogicHandler";
-import calenderData from "../mockData/MockData";
+import DayLogicHandler from "../Logic/DayLogicHandler";
+import TableDataLogicHandler from "../Logic/TableDataLogicHandler";
+import CalenderDataLogic from "../Logic/CalenderDataLogic";
 
 const getCalenderData = (): CalenderData => {
-    return JSON.parse(localStorage.getItem("calenderData") as string)
+    let fetchedData: string|null = localStorage.getItem("calenderData");
+    if(fetchedData === null) return CalenderDataLogic.generateEmptyCalender();
+    return JSON.parse(fetchedData as string)
 };
 
 const setCalenderData = (calenderData: CalenderData): void => {
     localStorage.setItem("calenderData", JSON.stringify(calenderData))
 };
 
-const deleteNewTableData = (calenderData: CalenderData, tableData: TableData, dayIndex: number) => {
+const deleteNewTableData = (calenderData: CalenderData, tableData: TableData, dayIndex: number): boolean => {
     if(TimeRangeLogicHandler.checkIfTimeExist(tableData.index, calenderData.days[dayIndex].tables)) {
-        calenderData.days[dayIndex].tables = calenderData.days[dayIndex].tables.splice(tableData.index, 1)
-        setCalenderData(calenderData)
+        calenderData.days[dayIndex].tables = calenderData.days[dayIndex].tables.splice(tableData.index, 1);
+        setCalenderData(calenderData);
+        return true;
     }
+    return false;
 };
 
-const addNewTableData = (calenderData: CalenderData, tableData: TableData, dayIndex: number) => {
-    if(TimeRangeLogicHandler.isTimeValid(tableData.timeRange, calenderData.days[dayIndex].tables))
+const addNewTableData = (calenderData: CalenderData, tableData: TableData, dayIndex: number): boolean => {
+    let targetDay = calenderData.days[dayIndex];
+    if(TimeRangeLogicHandler.isTimeValid(tableData.timeRange, targetDay.tables))
     {
-        calenderData.days[dayIndex].tables.push(tableData);
+        DayLogicHandler.generateIndexForNewTableData(tableData, targetDay);
+        targetDay.tables = TableDataLogicHandler.insertAndSortTableData(tableData, targetDay.tables);
+        setCalenderData(calenderData);
+        return true;
+    }
+    return false;
+};
+
+const updateTableData = (calenderData: CalenderData, tableData: TableData, dayIndex: number) => {
+    if(TimeRangeLogicHandler.checkIfTimeExist(tableData.index, calenderData.days[dayIndex].tables)){
+        calenderData.days[dayIndex].tables[tableData.index] = tableData;
         setCalenderData(calenderData);
         return true;
     }
@@ -30,7 +47,9 @@ const addNewTableData = (calenderData: CalenderData, tableData: TableData, dayIn
 
 const LocalStorageHandler = {
     addNewTableData: addNewTableData,
-
+    deleteNewTableData: deleteNewTableData,
+    updateTableData: updateTableData,
+    getCalenderData: getCalenderData
 };
 
 export default LocalStorageHandler

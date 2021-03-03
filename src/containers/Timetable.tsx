@@ -1,47 +1,48 @@
 import React from 'react';
 import TableData from "../dataModel/TableData";
-import {Grid, Typography} from "@material-ui/core";
+import {CardHeader, Typography, Card, CardContent, withStyles, IconButton, Tooltip} from "@material-ui/core";
 import TimeConverter from "../Logic/TimeConverter";
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const Timetable = (tableData: TableData) => {
 
-    const dataContainer: any = {
+    const DataContainer: any = withStyles({
+        root:{
         display: "flex",
         flexDirection: "column",
         backgroundColor: tableData.color,
-        borderRadius: 6,
-        margin: 5,
-        padding: 5,
-    };
+        padding: 5}
+    })(CardContent);
+
+    const StyledCardHeader = withStyles({
+        root:{
+            backgroundColor: tableData.color,
+        }
+    })(CardHeader);
+
+    const StyledCard: any = withStyles({
+        root:{
+           margin: 5
+        }
+    })(Card);
 
     return(
-        <Grid>
-            <div style={dataContainer}>
-                <Grid>
-                    <Typography variant="h6">
-                        {tableData.title}
-                    </Typography>
-                </Grid>
-                <Grid>
+        <StyledCard>
+            <StyledCardHeader
+                title ={tableData.title}
+                subheader= {TimeConverter(tableData.timeRange.timeFrom, tableData.timeRange.timeTo)}
+            />
+            <DataContainer>
                     <Typography variant="subtitle1">
                         {tableData.activity}
                     </Typography>
-                </Grid>
-                <Grid>
                     <Typography variant="subtitle1">
                         {tableData.place}
                     </Typography>
-                </Grid>
-                    <Typography variant="subtitle2">
-                        {TimeConverter(tableData.timeRange.timeFrom, tableData.timeRange.timeTo)}
-                    </Typography>
-                <Grid>
-
-                </Grid>
-            </div>
-        </Grid>
+            </DataContainer>
+        </StyledCard>
     )
-}
+};
 
 
 export default  Timetable
