@@ -1,9 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1592fa41-3ff8-428f-b343-3f89e3618476" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LocalStorageHandler/LocalStorageHandler.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/DayLogicHandler.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/TableDataLogicHandler.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/TimeConverter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/TimeLogicHandler.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Logic/TimeRangeLogicHandler.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/DayContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/MainContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/Timetable.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/WeekContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dataModel/CalenderData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dataModel/ColorPalettes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dataModel/Day.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dataModel/DayList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dataModel/TableData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dataModel/Tag.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dataModel/Time.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dataModel/TimeRange.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mockData/MockData.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1pChoBKxfPE1TpiDngCfaQi7GNQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Logic" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Logic" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1592fa41-3ff8-428f-b343-3f89e3618476" name="Default Changelist" comment="" />
+      <created>1614693151822</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614693151822</updated>
+      <workItem from="1614693153328" duration="1556000" />
+      <workItem from="1614700787125" duration="33007000" />
+      <workItem from="1614783481980" duration="1756000" />
+      <workItem from="1614793869674" duration="1974000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="560" y="262" key="#ESLint" timestamp="1614710974221">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="560" y="262" key="#ESLint/0.0.1920.1200/1920.120.1920.1080@0.0.1920.1200" timestamp="1614710974221" />
+    <state width="1920" height="332" key="GridCell.Tab.0.bottom" timestamp="1614791892548">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1920" height="332" key="GridCell.Tab.0.bottom/0.0.1920.1200/1920.120.1920.1080@0.0.1920.1200" timestamp="1614726893599" />
+    <state width="1920" height="332" key="GridCell.Tab.0.bottom/0.0.1920.1200/1920.145.1920.1055@0.0.1920.1200" timestamp="1614722066336" />
+    <state width="1920" height="332" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1614791892548" />
+    <state width="1920" height="315" key="GridCell.Tab.0.bottom/0.25.1920.1175/1920.145.1920.1055@0.25.1920.1175" timestamp="1614694880516" />
+    <state width="1920" height="332" key="GridCell.Tab.0.center" timestamp="1614791892547">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1920" height="332" key="GridCell.Tab.0.center/0.0.1920.1200/1920.120.1920.1080@0.0.1920.1200" timestamp="1614726893591" />
+    <state width="1920" height="332" key="GridCell.Tab.0.center/0.0.1920.1200/1920.145.1920.1055@0.0.1920.1200" timestamp="1614722066331" />
+    <state width="1920" height="332" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1614791892547" />
+    <state width="1920" height="315" key="GridCell.Tab.0.center/0.25.1920.1175/1920.145.1920.1055@0.25.1920.1175" timestamp="1614694880515" />
+    <state width="1920" height="332" key="GridCell.Tab.0.left" timestamp="1614791892547">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1920" height="332" key="GridCell.Tab.0.left/0.0.1920.1200/1920.120.1920.1080@0.0.1920.1200" timestamp="1614726893589" />
+    <state width="1920" height="332" key="GridCell.Tab.0.left/0.0.1920.1200/1920.145.1920.1055@0.0.1920.1200" timestamp="1614722066328" />
+    <state width="1920" height="332" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1614791892547" />
+    <state width="1920" height="315" key="GridCell.Tab.0.left/0.25.1920.1175/1920.145.1920.1055@0.25.1920.1175" timestamp="1614694880515" />
+    <state width="1920" height="332" key="GridCell.Tab.0.right" timestamp="1614791892548">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1920" height="332" key="GridCell.Tab.0.right/0.0.1920.1200/1920.120.1920.1080@0.0.1920.1200" timestamp="1614726893592" />
+    <state width="1920" height="332" key="GridCell.Tab.0.right/0.0.1920.1200/1920.145.1920.1055@0.0.1920.1200" timestamp="1614722066334" />
+    <state width="1920" height="332" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1614791892548" />
+    <state width="1920" height="315" key="GridCell.Tab.0.right/0.25.1920.1175/1920.145.1920.1055@0.25.1920.1175" timestamp="1614694880515" />
+    <state x="560" y="333" key="Vcs.Push.Dialog.v2" timestamp="1614798018245">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="560" y="333" key="Vcs.Push.Dialog.v2/0.0.1920.1200/1920.120.1920.1080@0.0.1920.1200" timestamp="1614798018245" />
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1614702486167">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="625" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200/1920.120.1920.1080@0.0.1920.1200" timestamp="1614702486167" />
   </component>
 </project>
