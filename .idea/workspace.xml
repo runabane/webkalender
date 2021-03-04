@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1592fa41-3ff8-428f-b343-3f89e3618476" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Logic/CalenderDataLogic.tsx" afterDir="false" />
+    <list default="true" id="1592fa41-3ff8-428f-b343-3f89e3618476" name="Default Changelist" comment="added Icons library. Change Component div to Material UI component. added new Color palettes. Completed delete, add, update calender data. refactor some design">
+      <change afterPath="$PROJECT_DIR$/src/containers/modalcontiner/AddModal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LocalStorageHandler/LocalStorageHandler.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/LocalStorageHandler/LocalStorageHandler.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/DayLogicHandler.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/DayLogicHandler.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/TableDataLogicHandler.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/TableDataLogicHandler.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/TimeRangeLogicHandler.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/TimeRangeLogicHandler.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/TimeConverter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/TimeConverter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/DayContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/DayContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/MainContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/MainContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Timetable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Timetable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataModel/ColorPalettes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataModel/ColorPalettes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mockData/MockData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/mockData/MockData.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +94,7 @@
       <workItem from="1614693153328" duration="1556000" />
       <workItem from="1614700787125" duration="33007000" />
       <workItem from="1614783481980" duration="1756000" />
-      <workItem from="1614793869674" duration="13956000" />
+      <workItem from="1614793869674" duration="26141000" />
     </task>
     <task id="LOCAL-00001" summary="init. Base displays">
       <created>1614798114966</created>
@@ -113,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614799897349</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added Icons library. Change Component div to Material UI component. added new Color palettes. Completed delete, add, update calender data. refactor some design">
+      <created>1614815091202</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1614815091202</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,54 +138,56 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="init. Base displays" />
     <MESSAGE value="updating README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating README.md" />
+    <MESSAGE value="added Icons library. Change Component div to Material UI component. added new Color palettes. Completed delete, add, update calender data. refactor some design" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Icons library. Change Component div to Material UI component. added new Color palettes. Completed delete, add, update calender data. refactor some design" />
   </component>
   <component name="WindowStateProjectService">
     <state x="560" y="262" key="#ESLint" timestamp="1614710974221">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="560" y="262" key="#ESLint/0.0.1920.1200/1920.120.1920.1080@0.0.1920.1200" timestamp="1614710974221" />
-    <state x="547" y="112" key="CommitChangelistDialog2" timestamp="1614799897242">
+    <state x="386" y="112" key="CommitChangelistDialog2" timestamp="1614827422491">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="547" y="112" key="CommitChangelistDialog2/0.0.1920.1200/1920.120.1920.1080@0.0.1920.1200" timestamp="1614799897242" />
-    <state x="547" y="112" key="CommitChangelistDialog2/0.0.1920.1200/1920.145.1920.1055@0.0.1920.1200" timestamp="1614798805284" />
+    <state x="386" y="112" key="CommitChangelistDialog2/0.0.1920.1200/1920.120.1920.1080@0.0.1920.1200" timestamp="1614827422491" />
+    <state x="547" y="112" key="CommitChangelistDialog2/0.0.1920.1200/1920.145.1920.1055@0.0.1920.1200" timestamp="1614815090969" />
     <state x="821" y="498" key="Github.ShareDialog" timestamp="1614798883701">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="821" y="498" key="Github.ShareDialog/0.0.1920.1200/1920.145.1920.1055@0.0.1920.1200" timestamp="1614798883701" />
-    <state width="960" height="332" key="GridCell.Tab.0.bottom" timestamp="1614798298581">
+    <state width="960" height="332" key="GridCell.Tab.0.bottom" timestamp="1614826922118">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="960" height="332" key="GridCell.Tab.0.bottom/0.0.1920.1200/1920.120.1920.1080@0.0.1920.1200" timestamp="1614798298581" />
-    <state width="1920" height="332" key="GridCell.Tab.0.bottom/0.0.1920.1200/1920.145.1920.1055@0.0.1920.1200" timestamp="1614722066336" />
+    <state width="960" height="332" key="GridCell.Tab.0.bottom/0.0.1920.1200/1920.120.1920.1080@0.0.1920.1200" timestamp="1614826922118" />
+    <state width="960" height="332" key="GridCell.Tab.0.bottom/0.0.1920.1200/1920.145.1920.1055@0.0.1920.1200" timestamp="1614822423944" />
     <state width="1920" height="332" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1614791892548" />
     <state width="1920" height="315" key="GridCell.Tab.0.bottom/0.25.1920.1175/1920.145.1920.1055@0.25.1920.1175" timestamp="1614694880516" />
-    <state width="960" height="332" key="GridCell.Tab.0.center" timestamp="1614798298579">
+    <state width="960" height="332" key="GridCell.Tab.0.center" timestamp="1614826922117">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="960" height="332" key="GridCell.Tab.0.center/0.0.1920.1200/1920.120.1920.1080@0.0.1920.1200" timestamp="1614798298579" />
-    <state width="1920" height="332" key="GridCell.Tab.0.center/0.0.1920.1200/1920.145.1920.1055@0.0.1920.1200" timestamp="1614722066331" />
+    <state width="960" height="332" key="GridCell.Tab.0.center/0.0.1920.1200/1920.120.1920.1080@0.0.1920.1200" timestamp="1614826922117" />
+    <state width="960" height="332" key="GridCell.Tab.0.center/0.0.1920.1200/1920.145.1920.1055@0.0.1920.1200" timestamp="1614822423938" />
     <state width="1920" height="332" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1614791892547" />
     <state width="1920" height="315" key="GridCell.Tab.0.center/0.25.1920.1175/1920.145.1920.1055@0.25.1920.1175" timestamp="1614694880515" />
-    <state width="960" height="332" key="GridCell.Tab.0.left" timestamp="1614798298571">
+    <state width="960" height="332" key="GridCell.Tab.0.left" timestamp="1614826922116">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="960" height="332" key="GridCell.Tab.0.left/0.0.1920.1200/1920.120.1920.1080@0.0.1920.1200" timestamp="1614798298571" />
-    <state width="1920" height="332" key="GridCell.Tab.0.left/0.0.1920.1200/1920.145.1920.1055@0.0.1920.1200" timestamp="1614722066328" />
+    <state width="960" height="332" key="GridCell.Tab.0.left/0.0.1920.1200/1920.120.1920.1080@0.0.1920.1200" timestamp="1614826922116" />
+    <state width="960" height="332" key="GridCell.Tab.0.left/0.0.1920.1200/1920.145.1920.1055@0.0.1920.1200" timestamp="1614822423937" />
     <state width="1920" height="332" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1614791892547" />
     <state width="1920" height="315" key="GridCell.Tab.0.left/0.25.1920.1175/1920.145.1920.1055@0.25.1920.1175" timestamp="1614694880515" />
-    <state width="960" height="332" key="GridCell.Tab.0.right" timestamp="1614798298580">
+    <state width="960" height="332" key="GridCell.Tab.0.right" timestamp="1614826922117">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="960" height="332" key="GridCell.Tab.0.right/0.0.1920.1200/1920.120.1920.1080@0.0.1920.1200" timestamp="1614798298580" />
-    <state width="1920" height="332" key="GridCell.Tab.0.right/0.0.1920.1200/1920.145.1920.1055@0.0.1920.1200" timestamp="1614722066334" />
+    <state width="960" height="332" key="GridCell.Tab.0.right/0.0.1920.1200/1920.120.1920.1080@0.0.1920.1200" timestamp="1614826922117" />
+    <state width="960" height="332" key="GridCell.Tab.0.right/0.0.1920.1200/1920.145.1920.1055@0.0.1920.1200" timestamp="1614822423943" />
     <state width="1920" height="332" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1614791892548" />
     <state width="1920" height="315" key="GridCell.Tab.0.right/0.25.1920.1175/1920.145.1920.1055@0.25.1920.1175" timestamp="1614694880515" />
-    <state x="560" y="333" key="Vcs.Push.Dialog.v2" timestamp="1614799935293">
+    <state x="560" y="333" key="Vcs.Push.Dialog.v2" timestamp="1614815097439">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="560" y="333" key="Vcs.Push.Dialog.v2/0.0.1920.1200/1920.120.1920.1080@0.0.1920.1200" timestamp="1614799935293" />
+    <state x="560" y="333" key="Vcs.Push.Dialog.v2/0.0.1920.1200/1920.145.1920.1055@0.0.1920.1200" timestamp="1614815097439" />
     <state x="740" y="446" key="git4idea.rebase.GitRebaseDialog" timestamp="1614798702931">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>

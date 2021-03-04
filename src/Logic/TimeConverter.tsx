@@ -5,8 +5,8 @@ const TimeConverter = (timeFrom: Time, timeTo: Time) => {
      return `${convertNumber(timeFrom.hour)}:${convertNumber(timeFrom.minute)} - ${convertNumber(timeTo.hour)}:${convertNumber(timeTo.minute)}`
 };
 
-const convertNumber = (hour: number) => {
-    return hour < 10 ? `0${hour}` : hour
-}
+const convertNumber = (time: number) => {
+    return time < 10 ? `0${time}` : time
+};
 
-export default TimeConverter
+export default {TimeConverter,convertNumber}

@@ -14,7 +14,7 @@ const DayContainer = (day: Day) => {
                 </StyledText>
                 {tables.map((table)  =>
                             <Timetable index={table.index} timeRange={table.timeRange} title={table.title}
-                                       place={table.place} color={DayLogicHandler.colorRandomizer()} tag={table.tag} activity={table.activity}/>
+                                       place={table.place} color={table.color} tag={table.tag} activity={table.activity}/>
                 )}
         </div>
     )

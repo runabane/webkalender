@@ -1,3 +1,5 @@
+import ColorPalettes from "../dataModel/ColorPalettes";
+
 const MockTimeBefore1 = {
     hour: 15,
     minute: 5
@@ -39,7 +41,7 @@ const MockTableData1 = {
     title: "Digitaltechnik",
     activity: "Vorlesung",
     place: "Hexagon",
-    color: "white",
+    color: ColorPalettes.ComponentColorPalettes.lightRed,
     tag: MockTag
 };
 
@@ -49,7 +51,7 @@ const MockTableData2 = {
     title: "AUD",
     activity: "Vorlesung",
     place: "Stadtmitte",
-    color: "white",
+    color: ColorPalettes.ComponentColorPalettes.yellowGreen,
     tag: MockTag
 };
 

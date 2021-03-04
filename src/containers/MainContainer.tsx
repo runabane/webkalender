@@ -1,14 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import WeekContainer from "./WeekContainer";
 import ColorPalettes from "../dataModel/ColorPalettes";
 import {Button, Tooltip, Fab, Grid, Typography, withStyles} from "@material-ui/core";
 import AddIcon from '@material-ui/icons/Add';
+import AddModal from './modalcontiner/AddModal';
 
 /**
  * Main Container that contains all Component
  * @constructor
  */
 const MainContainer = (props: any) => {
+    const [open, setOpen] = useState(false);
+    const handleClose = () => {
+        setOpen(false)
+    };
+    const handleOpen = () => {
+        setOpen(true)
+    };
+
     return(
         <MCStyle>
             <TitleText variant="h1">
@@ -16,12 +25,16 @@ const MainContainer = (props: any) => {
             </TitleText>
             <WeekContainer/>
             <ButtonContainer>
-                <Tooltip title={"Add Table"} aria-label={"add-table"}>
-                    <StickyAddButton size="large" color="inherit" aria-label="add">
+                <Tooltip title={"Add New Schedule"} aria-label={"add-table"}>
+                    <StickyAddButton onClick={handleOpen}
+                                     size="large"
+                                     color="inherit"
+                                     aria-label="add">
                         <AddIcon style={{fontSize: 35}}/>
                     </StickyAddButton>
                 </Tooltip>
             </ButtonContainer>
+            <AddModal open={open} handleClose={handleClose} />
         </MCStyle>
     )
 };

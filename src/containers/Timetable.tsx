@@ -2,7 +2,6 @@ import React from 'react';
 import TableData from "../dataModel/TableData";
 import {CardHeader, Typography, Card, CardContent, withStyles, IconButton, Tooltip} from "@material-ui/core";
 import TimeConverter from "../Logic/TimeConverter";
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const Timetable = (tableData: TableData) => {
 
@@ -30,7 +29,7 @@ const Timetable = (tableData: TableData) => {
         <StyledCard>
             <StyledCardHeader
                 title ={tableData.title}
-                subheader= {TimeConverter(tableData.timeRange.timeFrom, tableData.timeRange.timeTo)}
+                subheader= {TimeConverter.TimeConverter(tableData.timeRange.timeFrom, tableData.timeRange.timeTo)}
             />
             <DataContainer>
                     <Typography variant="subtitle1">
