@@ -23,14 +23,13 @@ const containerStyle: any = {
         borderRadius: 3,
         padding: 10,
         width: "80%",
-        height: "50%",
+        height: "60%",
         minHeight: 500,
-        maxHeight: 2000,
         minWidth: 1000,
         maxWidth: 2000,
         alignSelf: "center",
         justifyContent: "center",
-        margin: 10
+        margin: 10,
     }
 }
 

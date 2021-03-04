@@ -4,6 +4,7 @@ import ColorPalettes from "../dataModel/ColorPalettes";
 import {Button, Tooltip, Fab, Grid, Typography, withStyles} from "@material-ui/core";
 import AddIcon from '@material-ui/icons/Add';
 import AddModal from './modalcontiner/AddModal';
+import calenderData from "../mockData/MockData";
 
 /**
  * Main Container that contains all Component
@@ -34,7 +35,7 @@ const MainContainer = (props: any) => {
                     </StickyAddButton>
                 </Tooltip>
             </ButtonContainer>
-            <AddModal open={open} handleClose={handleClose} />
+            <AddModal open={open} handleClose={handleClose} days={calenderData.days}/>
         </MCStyle>
     )
 };
