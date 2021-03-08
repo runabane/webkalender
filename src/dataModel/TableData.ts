@@ -5,8 +5,8 @@ export default interface TableData{
     index: number;
     timeRange: TimeRange;
     title: string;
-    activity: string;
-    place: string;
+    activity?: string;
+    place?: string;
     color: string;
-    tag: Tag;
+    tag?: Tag[];
 }

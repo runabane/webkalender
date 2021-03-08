@@ -15,25 +15,28 @@ const setCalenderData = (calenderData: CalenderData): void => {
     localStorage.setItem("calenderData", JSON.stringify(calenderData))
 };
 
-const deleteNewTableData = (calenderData: CalenderData, tableData: TableData, dayIndex: number): boolean => {
-    if(TimeRangeLogicHandler.checkIfTimeExist(tableData.index, calenderData.days[dayIndex].tables)) {
-        calenderData.days[dayIndex].tables = calenderData.days[dayIndex].tables.splice(tableData.index, 1);
+const deleteNewTableData = (calenderData: CalenderData, tableDataIndex: number, dayIndex: number): CalenderData|null => {
+    if(TimeRangeLogicHandler.checkIfTimeExist(tableDataIndex, calenderData.days[dayIndex].tables)) {
+        //console.log("hehe deleting : " + tableDataIndex);
+        let temp = calenderData.days[dayIndex].tables.splice(tableDataIndex, 1);
+        //console.log("after delete : " + JSON.stringify(calenderData.days[dayIndex].tables) + " tbd index : " + tableDataIndex);
+        //console.log("temp : " + JSON.stringify(temp))
         setCalenderData(calenderData);
-        return true;
+        return calenderData;
     }
-    return false;
+    return null;
 };
 
-const addNewTableData = (calenderData: CalenderData, tableData: TableData, dayIndex: number): boolean => {
+const addNewTableData = (calenderData: CalenderData, tableData: TableData, dayIndex: number): CalenderData|null => {
     let targetDay = calenderData.days[dayIndex];
     if(TimeRangeLogicHandler.isTimeValid(tableData.timeRange, targetDay.tables))
     {
         DayLogicHandler.generateIndexForNewTableData(tableData, targetDay);
-        targetDay.tables = TableDataLogicHandler.insertAndSortTableData(tableData, targetDay.tables);
+        calenderData.days[dayIndex].tables = TableDataLogicHandler.insertAndSortTableData(tableData, targetDay.tables);
         setCalenderData(calenderData);
-        return true;
+        return calenderData;
     }
-    return false;
+    return null;
 };
 
 const updateTableData = (calenderData: CalenderData, tableData: TableData, dayIndex: number) => {

@@ -5,9 +5,11 @@ import TimeLogicHandler from "./TimeLogicHandler";
 let TLH = TimeLogicHandler;
 
 const isTimeValid = (this_TimeRange: TimeRange, tables: TableData[]) => {
+    //console.log("THIS_TIME RANGE : " + JSON.stringify(this_TimeRange));
     if(!checkToFromValidity(this_TimeRange)) return false;
     if(tables.length === 0) return true;
     let tableDataRest = tables.filter(table => !checkIntersection(this_TimeRange, table.timeRange)).length
+    //console.log("THIS_TIME RANGE : " + JSON.stringify(tableDataRest));
     return tableDataRest === 0
 };
 
@@ -18,6 +20,7 @@ const checkIfTimeExist = (this_TimeRange_index: Number, tables: TableData[]) => 
 };
 
 const checkToFromValidity = (timeRange: TimeRange) => {
+    //console.log("TIME VALIDITY : " + TLH.compareTime(timeRange.timeFrom, timeRange.timeTo));
     return TLH.compareTime(timeRange.timeFrom, timeRange.timeTo) < 0
 };
 

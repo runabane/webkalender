@@ -21,12 +21,18 @@ const fetchDay = (dayInNumber: number) => {
 const colorRandomizer = () => {
     let enumArray = Object.values(ColorPalettes.ComponentColorPalettes);
     let random = Math.ceil((Math.random() * 10)) % enumArray.length;
-    console.log("enum color : " + random );
-    return enumArray[random]
+    //console.log("enum color : " + random );
+    return enumArray[random] as string
 };
 
 const generateIndexForNewTableData = (toBeGenerated: TableData, day: Day) => {
-    toBeGenerated.index = day.tables[day.tables.length - 1].index
+    if(day.tables.length === 0) {
+        toBeGenerated.index = 0;
+        //console.log("idx if length 0 : " + toBeGenerated.index);
+        return
+    }
+    toBeGenerated.index = day.tables[day.tables.length - 1].index + 1;
+    //console.log("idx : " + toBeGenerated.index);
 };
 
 const generateEmptyWeek= () : Day[] => {

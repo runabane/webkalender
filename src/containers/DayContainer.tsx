@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Grid, Typography, withStyles} from "@material-ui/core";
+import {Typography, withStyles} from "@material-ui/core";
 import Day from "../dataModel/Day";
 import Timetable from "./Timetable";
 import DayLogicHandler from "../Logic/DayLogicHandler";
@@ -12,9 +12,9 @@ const DayContainer = (day: Day) => {
                 <StyledText>
                     {DayLogicHandler.fetchDay(day.index)}
                 </StyledText>
-                {tables.map((table)  =>
-                            <Timetable index={table.index} timeRange={table.timeRange} title={table.title}
-                                       place={table.place} color={table.color} tag={table.tag} activity={table.activity}/>
+                {tables.map((table, index)  =>
+                            <Timetable key={index} index={table.index} timeRange={table.timeRange} title={table.title}
+                                      place={table.place} color={table.color} tag={table.tag} activity={table.activity} dayIndex={day.index}/>
                 )}
         </div>
     )
