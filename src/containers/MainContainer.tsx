@@ -4,13 +4,13 @@ import ColorPalettes from "../dataModel/ColorPalettes";
 import {Button, Tooltip, Fab, Grid, Typography, withStyles, Backdrop, CircularProgress} from "@material-ui/core";
 import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
-import AddModal from './modalcontiner/AddModal';
+import AddModal from './modalcontainer/AddModal';
 import calenderData from "../mockData/MockData";
 import LocalStorageHandler from "../LocalStorageHandler/LocalStorageHandler";
 import CalenderData from "../dataModel/CalenderData";
 import CalenderDataLogic from "../Logic/CalenderDataLogic";
 
-export const DeleteContext = createContext({openDelete: false, handleDelete: (a: number, b: number) => null});
+export const TimetableContext = createContext({openDelete: false, handleDelete: (a: number, b: number) => null, calenderData: CalenderDataLogic.generateEmptyCalender(), handleSetCalenderData: (calenderData: CalenderData) => null});
 
 /**
  * Main Container that contains all Component
@@ -32,9 +32,10 @@ const MainContainer = (props: any) => {
         //console.log("CALENDERDATASTORAGE: " + JSON.stringify(calenderDataStorage));
     }, []);
 
-    const handleSetCalenderDataStorage = (calenderData: CalenderData) => {
+    const handleSetCalenderDataStorage = (calenderData: CalenderData): null => {
         setCalenderDataStorage(calenderData);
         handleSetLoading();
+        return null
     };
 
     const handleSetLoading = () => {
@@ -55,6 +56,10 @@ const MainContainer = (props: any) => {
         return null;
     };
 
+    const handleUpdate = (dayIndex: number, tableIndex: number) => {
+        return null
+    };
+
     const handleClose = () => {
         setOpenAdd(false)
     };
@@ -67,9 +72,9 @@ const MainContainer = (props: any) => {
             <TitleText variant="h1">
                 Meiner Zeitplan
             </TitleText>
-            <DeleteContext.Provider value={{openDelete: openDelete, handleDelete: handleDelete}}>
+            <TimetableContext.Provider value={{openDelete: openDelete, handleDelete: handleDelete, calenderData: calenderDataStorage, handleSetCalenderData: handleSetCalenderDataStorage}}>
                 <WeekContainer key={`week-container-loading:${loading}`} days={calenderDataStorage?.days}/>
-            </DeleteContext.Provider>
+            </TimetableContext.Provider>
 
             <ButtonContainer>
                 <Tooltip title={"Add New Schedule"} aria-label={"add-table"}>

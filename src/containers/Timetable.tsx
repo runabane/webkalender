@@ -1,15 +1,28 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import TableData from "../dataModel/TableData";
-import {CardHeader, Typography, Card, CardContent, withStyles, IconButton, Tooltip, Fab} from "@material-ui/core";
+import {
+    CardHeader,
+    Typography,
+    Card,
+    CardContent,
+    withStyles,
+    IconButton,
+    Tooltip,
+    Fab,
+    Button,
+    Box
+} from "@material-ui/core";
 import TimeConverter from "../Logic/TimeConverter";
-import {DeleteContext} from "./MainContainer";
+import {TimetableContext} from "./MainContainer";
 import CloseIcon from '@material-ui/icons/Close';
+import StatusModal from "./modalcontainer/StatusModal";
 
 const Timetable = (tableData: any) => {
 
-    const deleteHandler = useContext(DeleteContext);
+    const contextHandler = useContext(TimetableContext);
+    const [open, handleOpen] = useState(false);
 
-    console.log("deleteHandler : " + JSON.stringify(deleteHandler));
+    console.log("contextHandler : " + JSON.stringify(contextHandler));
 
     const DataContainer: any = withStyles({
         root:{
@@ -37,41 +50,61 @@ const Timetable = (tableData: any) => {
     })(Card);
 
     const setVisibility = () => {
-        return deleteHandler.openDelete ? 'visible' : 'hidden'
+        return contextHandler.openDelete ? 'visible' : 'hidden'
     };
 
     const handleDeleteOnClick = () => {
         console.log("DELETING");
-        deleteHandler.handleDelete(tableData.dayIndex, tableData.index)
+        contextHandler.handleDelete(tableData.dayIndex, tableData.index)
     };
 
-    // @ts-ignore
+    const handleCloseModal = () => {
+        handleOpen(false);
+    };
+
+    const handleOpenModal = () => {
+        handleOpen(true);
+    };
+
     const StyledFab: any = withStyles({
         root:{
             visibility: setVisibility()
         }
     })(Fab);
 
+    const StyledButton: any = withStyles({
+        root:{
+
+        }
+    })(Button);
+
     return(
-        <StyledCard>
-            <StyledCardHeader
-                title ={tableData.title}
-                subheader= {TimeConverter.TimeConverter(tableData.timeRange.timeFrom, tableData.timeRange.timeTo)}
-                action={
-                    <StyledFab size="small" color="secondary" onClick={handleDeleteOnClick}> {/*onClick={deleteHandler.handleDelete(tableData.dayIndex, tableData.index)}>*/}
-                        <CloseIcon />
-                    </StyledFab>
-                }
-            />
-            <DataContainer>
-                    <Typography variant="subtitle1">
-                        {tableData.activity}
-                    </Typography>
-                    <Typography variant="subtitle1">
-                        {tableData.place}
-                    </Typography>
-            </DataContainer>
-        </StyledCard>
+        <Box>
+                <StyledButton
+                onClick = {handleOpenModal}
+            >
+            <StyledCard>
+                <StyledCardHeader
+                    title ={tableData.title}
+                    subheader= {TimeConverter.TimeConverter(tableData.timeRange.timeFrom, tableData.timeRange.timeTo)}
+                    action={
+                        <StyledFab size="small" color="secondary" onClick={handleDeleteOnClick}>
+                            <CloseIcon />
+                        </StyledFab>
+                    }
+                />
+                <DataContainer>
+                        <Typography variant="subtitle1">
+                            {tableData.activity}
+                        </Typography>
+                        <Typography variant="subtitle1">
+                            {tableData.place}
+                        </Typography>
+                </DataContainer>
+            </StyledCard>
+            </StyledButton>
+            <StatusModal open={open} handleClose={handleCloseModal} calenderData={contextHandler.calenderData} calenderDataCallback={contextHandler.handleSetCalenderData} tableData={tableData} dayIndex={tableData.dayIndex}/>
+        </Box>
     )
 };
 

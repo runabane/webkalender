@@ -39,7 +39,8 @@ const addNewTableData = (calenderData: CalenderData, tableData: TableData, dayIn
     return null;
 };
 
-const updateTableData = (calenderData: CalenderData, tableData: TableData, dayIndex: number) => {
+const updateTableData = (tableData: TableData, dayIndex: number) => {
+    let calenderData = getCalenderData();
     if(TimeRangeLogicHandler.checkIfTimeExist(tableData.index, calenderData.days[dayIndex].tables)){
         calenderData.days[dayIndex].tables[tableData.index] = tableData;
         setCalenderData(calenderData);
